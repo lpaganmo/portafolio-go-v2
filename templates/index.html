@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{/* Las dobles llaves son "acciones" de la plantilla: Go las sustituye por datos.
+       {{.Nombre}} = el campo Nombre del Perfil que le pasamos desde main.go. */}}
+  <title>{{.Nombre}} · Portafolio</title>
+  <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body>
+
+  <div class="franja"></div>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <div class="cabecera__contenido">
+        {{/* La imagen que pide el enunciado: se sirve desde la ruta /static/ */}}
+        <div class="avatar-anillo">
+          <img class="avatar" src="/static/img/avatar.svg" alt="Ilustración de {{.Nombre}}" width="150" height="150">
+        </div>
+        <div>
+          <p class="antetitulo">Portafolio profesional</p>
+          <h1>{{.Nombre}}</h1>
+          <p class="puesto">{{.Puesto}}</p>
+          <p class="lema">{{.Lema}}</p>
+        </div>
+      </div>
+
+      {{/* Menú de "chips": cada enlace lleva el color de su sección */}}
+      <nav class="navegacion" aria-label="Secciones">
+        <a class="gris" href="#sobre-mi">Sobre mí</a>
+        <a class="azul" href="#experiencia">Experiencia</a>
+        <a class="verde" href="#formacion">Formación</a>
+        <a class="amarillo" href="#habilidades">Habilidades</a>
+        <a class="rojo" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section id="sobre-mi" class="gris">
+      <h2>Sobre mí</h2>
+      <div class="texto-intro">
+        {{range .SobreMi}}<p>{{.}}</p>{{end}}
+      </div>
+    </section>
+
+    <section id="experiencia" class="azul">
+      <h2>Experiencia</h2>
+      {{/* range recorre la lista; dentro, el punto (.) es cada Empleo */}}
+      {{range .Experiencia}}
+      <article class="tarjeta">
+        <h3>{{.Cargo}}</h3>
+        <p class="detalle">{{.Empresa}} · {{.Periodo}}</p>
+        <ul>
+          {{range .Logros}}<li>{{.}}</li>{{end}}
+        </ul>
+      </article>
+      {{end}}
+    </section>
+
+    <section id="formacion" class="verde">
+      <h2>Formación</h2>
+      {{range .Formacion}}
+      <article class="tarjeta">
+        <h3>{{.Titulo}}</h3>
+        <p class="detalle">{{.Centro}} · {{.Periodo}}</p>
+      </article>
+      {{end}}
+    </section>
+
+    <section id="habilidades" class="amarillo">
+      <h2>Habilidades</h2>
+      <div class="rejilla">
+        {{range .Habilidades}}
+        <div class="tarjeta">
+          <h3>{{.Categoria}}</h3>
+          <ul class="etiquetas">
+            {{range .Items}}<li>{{.}}</li>{{end}}
+          </ul>
+        </div>
+        {{end}}
+      </div>
+    </section>
+
+    <section id="contacto" class="rojo">
+      <h2>Contacto</h2>
+      <div class="tarjeta contacto">
+        <span>{{.Ubicacion}}</span>
+        <a class="boton" href="mailto:{{.Email}}">Escríbeme: {{.Email}}</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="franja"></div>
+    <div class="contenedor">
+      <p><strong>UOC</strong> · FP.443 Devops y cloud computing · Perfil y datos ficticios con fines académicos · Hecho con Go y Docker</p>
+    </div>
+  </footer>
+
+</body>
+</html>

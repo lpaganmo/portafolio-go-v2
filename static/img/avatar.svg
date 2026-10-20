@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Avatar ilustrado de un técnico IT">
+  <!-- Imagen original y ficticia: un avatar ilustrado (no es la foto de nadie). -->
+  <!-- SVG = imagen descrita con texto (formas y colores): pesa muy poco y se ve nítida a cualquier tamaño. -->
+  <rect width="160" height="160" fill="#E8F0FE"/>
+  <!-- Cuerpo con camiseta azul Drive -->
+  <path d="M28 160c4-34 26-52 52-52s48 18 52 52z" fill="#0066DA"/>
+  <!-- Cuello -->
+  <rect x="70" y="92" width="20" height="18" rx="4" fill="#E0B48E"/>
+  <!-- Cabeza -->
+  <circle cx="80" cy="70" r="30" fill="#EAC29F"/>
+  <!-- Pelo -->
+  <path d="M50 66c0-22 14-34 31-34 18 0 30 12 30 30-7-9-18-13-32-13-12 0-22 6-29 17z" fill="#3C2A21"/>
+  <!-- Ojos -->
+  <circle cx="69" cy="72" r="3" fill="#202124"/>
+  <circle cx="91" cy="72" r="3" fill="#202124"/>
+  <!-- Sonrisa -->
+  <path d="M70 84q10 8 20 0" stroke="#202124" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Auriculares de soporte técnico -->
+  <path d="M48 72a32 32 0 0 1 64 0" stroke="#00AC47" stroke-width="5" fill="none"/>
+  <rect x="42" y="66" width="10" height="18" rx="4" fill="#00AC47"/>
+  <rect x="108" y="66" width="10" height="18" rx="4" fill="#00AC47"/>
+  <path d="M113 84q0 14-16 16" stroke="#00AC47" stroke-width="3" fill="none"/>
+  <circle cx="96" cy="100" r="3.5" fill="#00AC47"/>
+  <!-- Detalle amarillo en la camiseta -->
+  <path d="M62 118h36" stroke="#FFBA00" stroke-width="4" stroke-linecap="round"/>
+</svg>
